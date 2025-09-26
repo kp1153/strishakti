@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const images = ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg", "f.jpg", "g.jpg"];
 
@@ -19,11 +20,12 @@ export default function EducationPage() {
       {/* 🖼️ Carousel */}
       <div className="relative w-full overflow-hidden rounded-lg shadow-lg mb-10 aspect-[16/9]">
         {images.map((img, index) => (
-          <img
+          <Image
             key={img}
             src={`/images/${img}`}
             alt={`Slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+            fill
+            className={`object-contain transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           />

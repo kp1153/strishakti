@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function LivelihoodPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -46,11 +47,15 @@ export default function LivelihoodPage() {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {images.map((image, index) => (
-              <div key={index} className="w-full flex-shrink-0">
-                <img
+              <div
+                key={index}
+                className="w-full flex-shrink-0 relative h-80 md:h-96"
+              >
+                <Image
                   src={image}
                   alt={`Livelihood Initiative ${index + 1}`}
-                  className="w-full h-80 md:h-96 object-contain bg-white"
+                  fill
+                  className="object-contain bg-white"
                   onError={(e) => {
                     e.target.src =
                       "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y0ZjRmNCIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgRm91bmQ8L3RleHQ+PC9zdmc+";
@@ -109,7 +114,7 @@ export default function LivelihoodPage() {
                 , Mahila Arthik, Sanskritik Evam Shaikshik Vikas Sansthan (MASS)
                 is running a transformative livelihood program under the banner{" "}
                 <span className="text-green-300 font-semibold">
-                  "Seeds of Self-Reliance: A Livelihood Initiative."
+                  &quot;Seeds of Self-Reliance: A Livelihood Initiative.&quot;
                 </span>
                 This program is specially designed to uplift poor women from SC,
                 ST, OBC, and minority communities by equipping them with
@@ -120,7 +125,7 @@ export default function LivelihoodPage() {
 
             <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <p className="text-gray-100">
-                The initiative organizes women's groups within their own
+                The initiative organizes women&apos;s groups within their own
                 community areas, enabling them to set up
                 <span className="text-cyan-300 font-semibold">
                   {" "}

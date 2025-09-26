@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
 
@@ -19,10 +20,12 @@ function OldAgeHomePage() {
       {/* 🖼️ Carousel */}
       <div className="relative w-full overflow-hidden rounded-lg shadow-lg mb-10 aspect-[16/9]">
         {images.map((img, index) => (
-          <img
+          <Image
             key={img}
             src={`/images/${img}`}
             alt={`Slide ${index + 1}`}
+            width={800}
+            height={450}
             className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
