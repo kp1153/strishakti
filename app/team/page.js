@@ -75,40 +75,33 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section className="py-16 px-6 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-            Our Team
-          </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Team</h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Dedicated and experienced members committed to social service
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
             <div
               key={member.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Image */}
-              <div className="relative h-56 sm:h-64 bg-gradient-to-br from-purple-100 to-blue-100">
+              <div className="relative h-64 bg-gradient-to-br from-purple-100 to-blue-100">
                 <Image
                   src={member.image}
-                  alt={`${member.name} - ${member.role}`}
+                  alt={member.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover"
-                  loading="lazy"
+                  unoptimized
                 />
               </div>
 
-              {/* Content */}
-              <div className="p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-1">
                   {member.name}
                 </h3>
                 <p className="text-purple-600 font-semibold text-sm mb-2">
@@ -118,13 +111,11 @@ const Team = () => {
                   {member.qualification}
                 </p>
 
-                {/* Contact Info */}
                 <div className="space-y-2 text-sm">
                   {member.email && (
                     <a
                       href={`mailto:${member.email}`}
-                      className="block text-blue-600 hover:text-blue-800 break-words"
-                      title={member.email}
+                      className="block text-blue-600 hover:text-blue-800 truncate"
                     >
                       {member.email}
                     </a>
@@ -136,11 +127,6 @@ const Team = () => {
                     >
                       +91 {member.phone}
                     </a>
-                  )}
-                  {!member.email && !member.phone && (
-                    <p className="text-gray-400 text-xs italic">
-                      Contact information not available
-                    </p>
                   )}
                 </div>
               </div>

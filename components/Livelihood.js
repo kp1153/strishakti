@@ -6,15 +6,15 @@ import Image from "next/image";
 export default function LivelihoodPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = [
-    "images/m1.jpg",
-    "images/m2.jpg",
-    "images/m3.jpg",
-    "images/m4.jpg",
-    "images/m5.jpg",
-    "images/m6.jpg",
-    "images/m7.jpg",
-    "images/m8.jpg",
-    "images/m9.jpg",
+    "/images/m1.jpg",
+    "/images/m2.jpg",
+    "/images/m3.jpg",
+    "/images/m4.jpg",
+    "/images/m5.jpg",
+    "/images/m6.jpg",
+    "/images/m7.jpg",
+    "/images/m8.jpg",
+    "/images/m9.jpg",
   ];
 
   // Auto-play functionality
@@ -56,10 +56,6 @@ export default function LivelihoodPage() {
                   alt={`Livelihood Initiative ${index + 1}`}
                   fill
                   className="object-contain bg-white"
-                  onError={(e) => {
-                    e.target.src =
-                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y0ZjRmNCIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgRm91bmQ8L3RleHQ+PC9zdmc+";
-                  }}
                 />
               </div>
             ))}

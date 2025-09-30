@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import Livelihood from "@/components/Livelihood";
 import Mission from "@/components/Mission";
 import OldAgeHomePage from "@/components/OldAgeHomePage";
+import Team from "@/components/Team";
 
 import Link from "next/link";
 
@@ -55,6 +56,7 @@ export default async function Page() {
       <div className="w-[70%] border-r border-gray-200 flex flex-col">
         <HeroSection />
         <About />
+        <Team />
         <Mission />
         <Education />
         <Livelihood />

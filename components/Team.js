@@ -95,14 +95,14 @@ const Team = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Image */}
-              <div className="relative h-56 sm:h-64 bg-gradient-to-br from-purple-100 to-blue-100">
+              <div className="flex items-center justify-center h-56 sm:h-64 bg-gradient-to-br from-purple-100 to-blue-100">
                 <Image
                   src={member.image}
                   alt={`${member.name} - ${member.role}`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
-                  loading="lazy"
+                  width={250}
+                  height={250}
+                  className="object-contain rounded-lg"
+                  priority={member.id <= 4}
                 />
               </div>
 
