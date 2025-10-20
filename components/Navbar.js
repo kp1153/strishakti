@@ -1,67 +1,115 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-purple-700 text-white py-4 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-        {/* Logo and NGO Name */}
-        <div className="flex items-center gap-4 mb-4">
-          <Image
-            src="/Logo.png"
-            alt="MASS Logo"
-            width={60}
-            height={60}
-            className="object-contain"
-          />
-          <h1 className="text-lg sm:text-xl font-semibold tracking-wide">
-            MAHILA ARTHIK SANSKRITIK EVAM SHAIKSHIK VIKAS SANSTHAN
-          </h1>
-        </div>
-
-        {/* Navigation Menu Below NGO Name */}
-        <nav>
-          <ul className="flex gap-6 text-sm xl:text-base">
+    <header>
+      {/* शीर्षक — हरे रंग में */}
+      <div className="bg-green-600 text-white text-center font-semibold py-3">
+        NGO of Esha Bhai
+      </div>
+      {/* मेन्यूज़ */}
+      <nav aria-label="Main navigation" className="bg-white shadow">
+        <div className="max-w-7xl mx-auto px-4">
+          <ul className="flex flex-wrap justify-center gap-4 py-3">
             <li>
-              <Link href="/" className="hover:text-yellow-200 transition">
-                होम
+              <Link href="/about-us" className="hover:underline">
+                ABOUT US
+              </Link>
+            </li>
+            <li>
+              <Link href="/vision-and-mission" className="hover:underline">
+                VISION AND MISSION
+              </Link>
+            </li>
+            <li>
+              <Link href="/board" className="hover:underline">
+                BOARD
+              </Link>
+            </li>
+            <li>
+              <Link href="/our-work" className="hover:underline">
+                OUR WORK
+              </Link>
+            </li>
+            <li>
+              <Link href="/modern-slavery" className="hover:underline">
+                MODERN SLAVERY
+              </Link>
+            </li>
+            <li>
+              <Link href="/genocide-re" className="hover:underline">
+                GENOCIDE REPARATION
+              </Link>
+            </li>
+            <li>
+              <Link href="/our-approach" className="hover:underline">
+                OUR APPROACH
+              </Link>
+            </li>
+            <li>
+              <Link href="/our-impact" className="hover:underline">
+                OUR IMPACT
+              </Link>
+            </li>
+            <li>
+              <Link href="/justice" className="hover:underline">
+                JUSTICE
               </Link>
             </li>
             <li>
               <Link
-                href="/aayojan"
-                className="hover:text-yellow-200 transition"
+                href="/financial-accountability"
+                className="hover:underline"
               >
-                आयोजन
+                FINANCIAL ACCOUNTABILITY
               </Link>
             </li>
             <li>
-              <Link
-                href="/gatividhi"
-                className="hover:text-yellow-200 transition"
-              >
-                गतिविधि
+              <Link href="/resources" className="hover:underline">
+                RESOURCES
               </Link>
             </li>
             <li>
-              <Link href="/vividh" className="hover:text-yellow-200 transition">
-                विविध
+              <Link href="/survivors-story" className="hover:underline">
+                SURVIVORS STORIES
               </Link>
             </li>
             <li>
-              <Link
-                href="/dekhabhaal"
-                className="hover:text-yellow-200 transition"
-              >
-                देखभाल
+              <Link href="/gallery" className="hover:underline">
+                GALLERY
+              </Link>
+            </li>
+            <li>
+              <Link href="/publications" className="hover:underline">
+                PUBLICATIONS
+              </Link>
+            </li>
+            <li>
+              <Link href="/volunteer" className="hover:underline">
+                VOLUNTEER
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:underline">
+                CONTACT
+              </Link>
+            </li>
+            <li>
+              <Link href="/donate" className="hover:underline">
+                DONATE
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy-policy" className="hover:underline">
+                Privacy Policy
               </Link>
             </li>
           </ul>
-        </nav>
-      </div>
-    </div>
+        </div>
+      </nav>
+    </header>
   );
 };
 
