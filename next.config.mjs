@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ["cdn.sanity.io", "res.cloudinary.com"],
-    unoptimized: true,
-  },
+  /* config options here */
+  reactCompiler: true,
 };
 
 export default nextConfig;

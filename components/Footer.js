@@ -1,19 +1,18 @@
-export default function Footer() {
+// components/Footer.jsx
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-sm">
-          All rights reserved | Developed by{" "}
-          <a
-            href="https://www.web-developer-kp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-400 hover:text-pink-300 underline"
-          >
-            Web Developer KP
-          </a>
+    <footer className="bg-gray-900 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <p className="text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} {process.env.NEXT_PUBLIC_ORG_SHORT} - All
+          Rights Reserved | Trust Reg: {process.env.NEXT_PUBLIC_TRUST_REG_NO} |
+          80G: {process.env.NEXT_PUBLIC_80G_REG} | Email:{" "}
+          {process.env.NEXT_PUBLIC_EMAIL} | Phone:{" "}
+          {process.env.NEXT_PUBLIC_MOBILE_1}
         </p>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
