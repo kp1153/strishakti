@@ -16,13 +16,7 @@ import {
   Briefcase,
 } from "lucide-react";
 
-export const metadata = {
-  title: `Partner With Us - Get Involved - ${process.env.NEXT_PUBLIC_ORG_SHORT}`,
-  description:
-    "Explore partnership opportunities with ARP India for CSR, program collaboration, and joint initiatives",
-  keywords:
-    "CSR partnership, NGO collaboration, corporate partnership, social impact partnership",
-};
+// *** इस जगह से 'metadata' एक्सपोर्ट को हटा दिया गया है। ***
 
 export default function PartnerPage() {
   const [formData, setFormData] = useState({
