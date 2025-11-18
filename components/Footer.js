@@ -17,7 +17,7 @@ const Footer = () => {
             href="https://www.web-developer-kp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-pink-600 hover:text-blue-700 transition duration-300" // गुलाबी रंग और बोल्ड
+            className="font-bold text-amber-600 hover:text-blue-700 transition duration-300" // गुलाबी रंग और बोल्ड
           >
             क्रिएटिव सॉल्यूशंस
           </a>
