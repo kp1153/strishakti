@@ -19,7 +19,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="font-bold text-pink-600 hover:text-blue-700 transition duration-300" // गुलाबी रंग और बोल्ड
           >
-            वेब डेवलपर क्रिएटिव सॉल्यूशंस
+            क्रिएटिव सॉल्यूशंस
           </a>
         </p>
       </div>
