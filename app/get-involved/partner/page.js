@@ -1,10 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   Handshake,
   Building2,
@@ -15,8 +11,6 @@ import {
   User,
   Briefcase,
 } from "lucide-react";
-
-// *** इस जगह से 'metadata' एक्सपोर्ट को हटा दिया गया है। ***
 
 export default function PartnerPage() {
   const [formData, setFormData] = useState({
@@ -141,7 +135,7 @@ export default function PartnerPage() {
       title: "Transparent Operations",
       description:
         "Complete transparency in fund utilization and impact reporting",
-      icon: "🔍",
+      icon: "📊",
     },
     {
       title: "Multi-State Presence",
@@ -174,20 +168,16 @@ export default function PartnerPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyPartner.map((reason, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-zinc-800 border-zinc-700 hover:border-green-700 transition-all text-center"
+                className="bg-zinc-800 border border-zinc-700 rounded-lg p-6 hover:border-green-700 transition-all text-center"
               >
-                <CardHeader>
-                  <div className="text-5xl mb-4">{reason.icon}</div>
-                  <CardTitle className="text-lg text-green-700 mb-2">
-                    {reason.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-400 text-sm">{reason.description}</p>
-                </CardContent>
-              </Card>
+                <div className="text-5xl mb-4">{reason.icon}</div>
+                <h3 className="text-lg text-green-700 mb-2 font-bold">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-400 text-sm">{reason.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -199,35 +189,31 @@ export default function PartnerPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {partnershipTypes.map((type, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-zinc-800 border-zinc-700 hover:border-green-700 transition-all"
+                className="bg-zinc-800 border border-zinc-700 rounded-lg p-6 hover:border-green-700 transition-all"
               >
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-green-700 rounded-lg">
-                      <type.icon className="w-8 h-8 text-zinc-900" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 bg-green-700 rounded-lg">
+                    <type.icon className="w-8 h-8 text-zinc-900" />
+                  </div>
+                  <h3 className="text-xl text-green-700 font-bold">
+                    {type.title}
+                  </h3>
+                </div>
+                <p className="text-gray-400 text-sm mb-4">{type.description}</p>
+                <div className="space-y-2">
+                  <p className="text-xs text-gray-500 font-semibold mb-2">
+                    Benefits:
+                  </p>
+                  {type.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-700 rounded-full"></div>
+                      <p className="text-sm text-gray-400">{benefit}</p>
                     </div>
-                    <CardTitle className="text-xl text-green-700">
-                      {type.title}
-                    </CardTitle>
-                  </div>
-                  <p className="text-gray-400 text-sm">{type.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <p className="text-xs text-gray-500 font-semibold mb-2">
-                      Benefits:
-                    </p>
-                    {type.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-green-700 rounded-full"></div>
-                        <p className="text-sm text-gray-400">{benefit}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -239,20 +225,16 @@ export default function PartnerPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {csrAreas.map((area, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-zinc-800 border-zinc-700 text-center"
+                className="bg-zinc-800 border border-zinc-700 rounded-lg p-6 text-center"
               >
-                <CardHeader>
-                  <div className="text-5xl mb-3">{area.icon}</div>
-                  <CardTitle className="text-lg text-green-700">
-                    {area.area}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-400 text-sm">{area.description}</p>
-                </CardContent>
-              </Card>
+                <div className="text-5xl mb-3">{area.icon}</div>
+                <h3 className="text-lg text-green-700 font-bold mb-2">
+                  {area.area}
+                </h3>
+                <p className="text-gray-400 text-sm">{area.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -343,16 +325,16 @@ export default function PartnerPage() {
 
         {/* Partnership Form */}
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-zinc-800 border-zinc-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-green-700 text-center">
+          <div className="bg-zinc-800 border border-zinc-700 rounded-lg p-6">
+            <div className="mb-6">
+              <h2 className="text-2xl text-green-700 text-center font-bold mb-2">
                 Let's Collaborate
-              </CardTitle>
+              </h2>
               <p className="text-gray-400 text-center">
                 Fill out the form and we'll get back to you within 48 hours
               </p>
-            </CardHeader>
-            <CardContent>
+            </div>
+            <div>
               {submitted ? (
                 <div className="bg-green-900 border border-green-700 rounded-lg p-8 text-center">
                   <div className="text-5xl mb-4">✅</div>
@@ -372,14 +354,15 @@ export default function PartnerPage() {
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <Input
+                      <input
+                        type="text"
                         placeholder="Full name"
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
                         required
-                        className="pl-10 bg-zinc-900 border-zinc-700 text-gray-100"
+                        className="w-full pl-10 bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                       />
                     </div>
                   </div>
@@ -390,7 +373,7 @@ export default function PartnerPage() {
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <Input
+                      <input
                         type="email"
                         placeholder="your.email@company.com"
                         value={formData.email}
@@ -398,7 +381,7 @@ export default function PartnerPage() {
                           setFormData({ ...formData, email: e.target.value })
                         }
                         required
-                        className="pl-10 bg-zinc-900 border-zinc-700 text-gray-100"
+                        className="w-full pl-10 bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                       />
                     </div>
                   </div>
@@ -409,7 +392,7 @@ export default function PartnerPage() {
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <Input
+                      <input
                         type="tel"
                         placeholder="+91 XXXXXXXXXX"
                         value={formData.phone}
@@ -417,7 +400,7 @@ export default function PartnerPage() {
                           setFormData({ ...formData, phone: e.target.value })
                         }
                         required
-                        className="pl-10 bg-zinc-900 border-zinc-700 text-gray-100"
+                        className="w-full pl-10 bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                       />
                     </div>
                   </div>
@@ -428,7 +411,8 @@ export default function PartnerPage() {
                     </label>
                     <div className="relative">
                       <Briefcase className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <Input
+                      <input
+                        type="text"
                         placeholder="Your company/organization name"
                         value={formData.organization}
                         onChange={(e) =>
@@ -438,7 +422,7 @@ export default function PartnerPage() {
                           })
                         }
                         required
-                        className="pl-10 bg-zinc-900 border-zinc-700 text-gray-100"
+                        className="w-full pl-10 bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                       />
                     </div>
                   </div>
@@ -447,7 +431,8 @@ export default function PartnerPage() {
                     <label className="text-gray-400 text-sm mb-2 block">
                       Partnership Type *
                     </label>
-                    <Input
+                    <input
+                      type="text"
                       placeholder="e.g., CSR Partnership, Program Collaboration"
                       value={formData.partnershipType}
                       onChange={(e) =>
@@ -457,7 +442,7 @@ export default function PartnerPage() {
                         })
                       }
                       required
-                      className="bg-zinc-900 border-zinc-700 text-gray-100"
+                      className="w-full bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                     />
                   </div>
 
@@ -465,7 +450,7 @@ export default function PartnerPage() {
                     <label className="text-gray-400 text-sm mb-2 block">
                       Message *
                     </label>
-                    <Textarea
+                    <textarea
                       placeholder="Tell us about your organization and partnership interests..."
                       value={formData.message}
                       onChange={(e) =>
@@ -473,20 +458,20 @@ export default function PartnerPage() {
                       }
                       required
                       rows={5}
-                      className="bg-zinc-900 border-zinc-700 text-gray-100"
+                      className="w-full bg-zinc-900 border border-zinc-700 text-gray-100 rounded-md px-3 py-2"
                     />
                   </div>
 
-                  <Button
+                  <button
                     type="submit"
-                    className="w-full bg-green-700 hover:bg-green-600 text-white font-semibold py-6 text-lg"
+                    className="w-full bg-green-700 hover:bg-green-600 text-white font-semibold py-3 text-lg rounded-md transition-colors"
                   >
                     Submit Partnership Inquiry
-                  </Button>
+                  </button>
                 </form>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         {/* Contact Info */}
@@ -498,20 +483,22 @@ export default function PartnerPage() {
             For immediate partnership discussions
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <a
+            <a // <-- यहां a टैग जोड़ा गया
               href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
               className="flex items-center gap-2 text-gray-300 hover:text-green-700"
             >
               <Mail className="w-5 h-5" />
               <span>{process.env.NEXT_PUBLIC_EMAIL}</span>
-            </a>
-            <a
+            </a>{" "}
+            {/* <-- यहां a टैग बंद किया गया */}
+            <a // <-- यहां a टैग जोड़ा गया
               href={`tel:${process.env.NEXT_PUBLIC_MOBILE_1}`}
               className="flex items-center gap-2 text-gray-300 hover:text-green-700"
             >
               <Phone className="w-5 h-5" />
               <span>{process.env.NEXT_PUBLIC_MOBILE_1}</span>
-            </a>
+            </a>{" "}
+            {/* <-- यहां a टैग बंद किया गया */}
           </div>
         </div>
       </div>
