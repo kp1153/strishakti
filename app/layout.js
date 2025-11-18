@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LenisProvider from "@/components/providers/LenisProvider";
+import GSAPProvider from "@/components/providers/GSAPProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,9 +67,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LenisProvider>
-          <Navbar />
-          <main className="min-h-screen pt-20">{children}</main>
-          <Footer />
+          <GSAPProvider>
+            <Navbar />
+            <main className="min-h-screen pt-20">{children}</main>
+            <Footer />
+          </GSAPProvider>
         </LenisProvider>
       </body>
     </html>
