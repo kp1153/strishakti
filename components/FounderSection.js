@@ -1,3 +1,4 @@
+"use client";
 const FounderSection = () => {
   return (
     <section id="founder" className="py-20 bg-gray-50">

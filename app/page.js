@@ -6,6 +6,7 @@ import ImpactSection from "../components/ImpactSection";
 import DonateSection from "../components/DonateSection";
 import ContactSection from "../components/ContactSection";
 
+
 export default function Home() {
   return (
     <main>

@@ -1,3 +1,4 @@
+"use client";
 const ImpactSection = () => {
   const stats = [
     { number: "10,000+", label: "Children Helped" },
