@@ -45,3 +45,4 @@ const ContactSection = () => {
     </section>
   );
 };
+export default AboutSection;

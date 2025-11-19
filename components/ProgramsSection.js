@@ -60,3 +60,4 @@ const ProgramsSection = () => {
     </section>
   );
 };
+export default ProgramsSection;

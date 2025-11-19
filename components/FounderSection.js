@@ -46,3 +46,4 @@ const FounderSection = () => {
     </section>
   );
 };
+export default FounderSection;
