@@ -46,4 +46,4 @@ const ContactSection = () => {
     </section>
   );
 };
-export default AboutSection;
+export default ContactSection;  // ✅ सही
